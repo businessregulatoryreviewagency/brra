@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BRRA Website - Business Regulatory Review Agency
 
 Official website for the Business Regulatory Review Agency of Zambia with complete role-based authentication system.
@@ -198,3 +199,6 @@ WHERE email = 'your-email@example.com';
 ## 📄 License
 
 © 2024 Business Regulatory Review Agency. All rights reserved.
+=======
+# brra
+>>>>>>> 85ed97db11304fffe21944a969bbfc73e3b0ee62
