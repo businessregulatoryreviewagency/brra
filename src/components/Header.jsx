@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import PortalLoginModal from './PortalLoginModal'
 
@@ -7,6 +7,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
   const { user, signOut } = useAuth()
 
   const navLinks = [
@@ -22,7 +23,7 @@ const Header = () => {
 
   const handleSignOut = async () => {
     await signOut()
-    window.location.href = '/'
+    navigate('/')
   }
 
   return (

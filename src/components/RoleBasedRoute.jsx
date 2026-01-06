@@ -1,4 +1,4 @@
-import { Navigate } from 'react-router-dom'
+import { Navigate, Link } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 
 const RoleBasedRoute = ({ children, allowedRoles = [] }) => {
@@ -35,12 +35,12 @@ const RoleBasedRoute = ({ children, allowedRoles = [] }) => {
               <strong>Email:</strong> {user.email}
             </p>
           </div>
-          <button
-            onClick={() => window.location.href = '/'}
-            className="px-6 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors"
+          <Link
+            to="/"
+            className="px-6 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors inline-block"
           >
             Return to Home
-          </button>
+          </Link>
         </div>
       </div>
     )
@@ -57,12 +57,12 @@ const RoleBasedRoute = ({ children, allowedRoles = [] }) => {
           <p className="text-gray-600 mb-6">
             You do not have permission to access this page. Please contact an administrator if you believe this is an error.
           </p>
-          <button
-            onClick={() => window.location.href = '/dashboard'}
-            className="px-6 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors"
+          <Link
+            to="/dashboard"
+            className="px-6 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors inline-block"
           >
             Go to Dashboard
-          </button>
+          </Link>
         </div>
       </div>
     )

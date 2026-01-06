@@ -24,7 +24,13 @@ export const AuthProvider = ({ children }) => {
         .eq('id', userId)
         .single()
 
-      if (error) throw error
+      if (error) {
+        console.error('Error fetching profile:', error)
+        // Don't throw - just set profile to null
+        // This allows the app to show "Profile Not Found" instead of logging out
+        setProfile(null)
+        return
+      }
       setProfile(data)
     } catch (error) {
       console.error('Error fetching profile:', error)
